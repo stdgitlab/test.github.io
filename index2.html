@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="keywords" content="foursquare">
+	<meta name="description" content="Over 50 million people use Foursquare to discover great businesses and share what they love about them with others. Join the nearly 2 million businesses who are already taking advantage of Foursquare to join the conversation and grow their business.">
+
+
+	<title>Foursquare for Business</title>
+
+	<link rel="home" href="">
+ 	<link rel="shortcut icon" href="https://business.foursquare.com/favicon.ico" type="image/x-icon">
+
+
+	<script src="static/js/jquery.min1.js"></script>
+	<script>window.jQuery || document.write('<script src="/js/vendor/jquery.js"><\/script>')</script>
+	<script src="static/js/respond.js"></script>
+	<script src="static/js/html5shiv.min.js"></script>
+
+	<script src="static/js/jquery.cookie.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+
+    // Set up language picker
+    var hostnameTokens = window.location.hostname.split('.');
+    var lang = 'en';
+    if (hostnameTokens.length == 4 && hostnameTokens.indexOf('business') >= 0) {
+      lang = hostnameTokens[0];
+    }
+    $('body').addClass('lang-' + lang);
+    $('select.lang-selector').val(lang).change(function() {
+      var prefix = $(this).val();
+      setLangPref(prefix);
+      redirectBasedOnLangPref(prefix);
+    });
+
+    handleLangPref();
+  });
+
+  function handleLangPref() {
+    // Check for a cookie from foursquare.com
+    var cookieLangPref = $.cookie('lang-pref');
+
+    // Check browser language
+    var browserLangPref = getBrowserLangPref();
+
+    // Give precedence to the cookie if there is one
+    var langPref = cookieLangPref ? cookieLangPref : browserLangPref;
+
+    // Check current language subdomain
+    var subdomain = window.location.hostname.split('.')[0];
+    var currentLang = subdomain == 'business' ? 'en' : subdomain;
+
+    // If they're not on the right subdomain, let's redirect them
+    if (currentLang != langPref && currentLang != "104") {
+      redirectBasedOnLangPref(langPref);
+    }
+  }
+
+  function setLangPref(lang) {
+    $.cookie('lang-pref', lang, { expires: 365, path: '/', domain: 'foursquare.com' });
+  }
+
+  function getBrowserLangPref() {
+    var supportedLangs = ['it', 'de', 'es', 'fr', 'ja', 'th', 'ko', 'ru', 'pt', 'id', 'tr', 'en'];
+    var browserLangPref = window.navigator.language ? window.navigator.language : window.navigator['userLanguage'];
+
+    if (browserLangPref === undefined) { browserLangPref = 'en'; }
+
+    browserLangPref = browserLangPref.split('-')[0].toLowerCase();
+
+    if (supportedLangs.indexOf(browserLangPref) < 0) { browserLangPref = 'en'; }
+
+    return browserLangPref;
+  }
+
+  function redirectBasedOnLangPref(lang) {
+  }
+
+  </script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-2322480-18', 'auto');
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+
+	</script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PH9DPZ8');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- redirect to browser support page -->
+  <!--[if (lte IE 8)]> <script type="text/javascript"> window.location = "/upgrade"; </script> <![endif]-->
+  <link rel="stylesheet" type="text/css" href="static/css/app.min.css">
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="ns.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+	<header class="site-head gutter-left gutter-right">
+		<div class="max-wrapper">
+			<span class="hamburger"><span class="hamburger-icon"></span></span>
+			<a href="" class="fsq-logo">
+				<span class="logo">
+					<svg width="145px" height="20px">
+						<image xlink:href="/img/logo.svg" src="/img/logo.png" width="145px" height="20px"></image>
+					</svg>
+				</span>
+				<span class="txt">for Business</span>
+			</a>
+			<nav class="main-nav">
+				<div class="inner-wrapper">
+					<ul>
+						<li><a href="overview.html" ga-label="Overview">Overview</a></li>
+							<li><a href="claim1.html" ga-label="Your Listing">Your Listing</a></li>
+							<li><a href="ads.html" ga-label="Promote">Promote</a></li>
+							<li><a href="discover.html" ga-label="Discover">Discover</a></li>
+							<li class="login-btn"><a href="login-2Faccounts.html">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<div class="main-content">
+		<main id="content" role="main">
+				<section class="page home" data-page="home">
+					<section class="hero-module w-video">
+	<div class="wrapper">
+		<div class="txt-container gutter-left gutter-right">
+			<div class="max-wrapper">
+				<div class="intro">
+					<h1>Hi, we&#039;re Foursquare.
+						<span class="business">We help people discover your <strong>business</strong>.</span>
+						<span class="bar hidden">We help people discover your <strong>bar</strong>.</span>
+						<span class="restaurant hidden">We help people discover your <strong>restaurant</strong>.</span>
+						<span class="boutique hidden">We help people discover your <strong>boutique</strong>.</span>
+					</h1>
+				</div>
+			</div>
+			<div class="search fdesktop"><div class="search-module">
+	<div class="max-wrapper">
+		<h3>Search for your business on Foursquare.</h3>
+		<form action="">
+			<div class="venue-name">
+				<input type="text" name="venuename" placeholder="Business Name" autocomplete="off">
+				<div class="venues-dropdown"></div>
+			</div>
+			<div class="venue-location">
+				<input type="text" name="venuelocation" placeholder="City, State/Country" autocomplete="off">
+				<span class="locator-sm current hover"></span>
+			</div>
+			<div class="venue-search">
+				<div class="input-submit">
+					<span class="search-white-sm"></span>
+					<span class="search-txt">Search</span>
+					<input type="submit" name="venuesearch" class="simple-btn hide-input" value="Search">
+				</div>
+			</div>
+		</form>
+		<small><p>Ready to claim your listing?&nbsp;<a href="claim2.html">Get started now.</a></p></small>
+	</div>
+</div></div>
+		</div>
+		<div class="slideshow-container">
+			<div class="flexslider">
+			  <ul class="slides">
+			  				  				    		<li class="business" data-venue="business">
+		    			<div class="inner-wrapper">
+			  				<video id="f_business" poster="/assets/videos/video_poster.jpg" autoplay="" loop="">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/business_v4.mp4" type="video/mp4">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/business_v4.ogv" type="video/ogv">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/business_v4.webm" type="video/webm">
+			      			   <img src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/business_v4.jpg" title="Your browser does not support the <video> tag">
+			      			</video>
+			      			<div class="fallback-img" data-src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/business_v4.jpg"></div>
+			      		</div>
+						<div class="bg-overlay"></div>
+		  			</li>
+			  				  				    		<li class="bar" data-venue="bar">
+		    			<div class="inner-wrapper">
+			  				<video id="f_bar" poster="/assets/videos/video_poster.jpg" autoplay="" loop="">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Bar_v4.mp4" type="video/mp4">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Bar_v4.ogv" type="video/ogv">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Bar_v4.webm" type="video/webm">
+			      			   <img src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Bar_v4.jpg" title="Your browser does not support the <video> tag">
+			      			</video>
+			      			<div class="fallback-img" data-src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Bar_v4.jpg"></div>
+			      		</div>
+						<div class="bg-overlay"></div>
+		  			</li>
+			  				  				    		<li class="restaurant" data-venue="restaurant">
+		    			<div class="inner-wrapper">
+			  				<video id="f_restaurant" poster="/assets/videos/video_poster.jpg" autoplay="" loop="">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/restaurant_v4.mp4" type="video/mp4">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/restaurant_v4.ogv" type="video/ogv">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/restaurant_v4.webm" type="video/webm">
+			      			   <img src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/restaurant_v4.jpg" title="Your browser does not support the <video> tag">
+			      			</video>
+			      			<div class="fallback-img" data-src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/restaurant_v4.jpg"></div>
+			      		</div>
+						<div class="bg-overlay"></div>
+		  			</li>
+			  				  				    		<li class="Boutique" data-venue="boutique">
+		    			<div class="inner-wrapper">
+			  				<video id="f_boutique" poster="/assets/videos/video_poster.jpg" autoplay="" loop="">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Boutique_v4.mp4" type="video/mp4">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Boutique_v4.ogv" type="video/ogv">
+			      			  <source src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Boutique_v4.webm" type="video/webm">
+			      			   <img src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Boutique_v4.jpg" title="Your browser does not support the <video> tag">
+			      			</video>
+			      			<div class="fallback-img" data-src="https://s3.amazonaws.com/playfoursquare/businesses/craft/videos/Boutique_v4.jpg"></div>
+			      		</div>
+						<div class="bg-overlay"></div>
+		  			</li>
+			  </ul>
+			</div>
+		</div>
+		<div class="hero-arrow"></div>
+	</div>
+	<div class="search fmobile gutter-left gutter-right"><div class="search-module">
+	<div class="max-wrapper">
+		<h3>Search for your business on Foursquare.</h3>
+		<form action="">
+			<div class="venue-name">
+				<input type="text" name="venuename" placeholder="Business Name" autocomplete="off">
+				<div class="venues-dropdown"></div>
+			</div>
+			<div class="venue-location">
+				<input type="text" name="venuelocation" placeholder="City, State/Country" autocomplete="off">
+				<span class="locator-sm current hover"></span>
+			</div>
+			<div class="venue-search">
+				<div class="input-submit">
+					<span class="search-white-sm"></span>
+					<span class="search-txt">Search</span>
+					<input type="submit" name="venuesearch" class="simple-btn hide-input" value="Search">
+				</div>
+			</div>
+		</form>
+		<small><p>Ready to claim your listing?&nbsp;<a href="claim2.html">Get started now.</a></p></small>
+	</div>
+</div></div>
+</section>					<div class="about-module">
+	<div class="max-wrapper">
+		<h3>About Foursquare</h3>
+		<p><p>Over 50 million people use Foursquare to discover great businesses and share what they love about them with others. Join the nearly 2 million businesses who are already taking advantage of Foursquare to join the conversation and grow their business.&nbsp;<a href="overview.html">Learn more</a>.</p>
+	</div>
+</div>					<div id="detail-claim" data-module="claim" class="detail-module gutter-left gutter-right claim">
+	<div class="max-wrapper">
+
+					<div class="txt-container img-right">
+				<h3>Claim your business listing and get access to Foursquare’s business tools.</h3>
+				<div class="keywords fdesktop">
+					<a href="claim1.html#foursquare-tips">Share what’s great</a>					 <a href="claim1.html#foursquare-specials">Reward customers</a>					 <a href="claim1.html#foursquare-analytics">Unlock analytics</a>				</div>
+				<a href="claim2.html" class="simple-btn teal fdesktop" target="_blank">Claim your listing now now now</a>
+			</div>
+			<div class="img-container img-right ">
+				<div class="frame">
+											<img src="static/picture/Claim_Animation.gif">
+									</div>
+			</div>
+			<div class="txt-container img-right fmobile">
+				<a href="claim2.html" class="simple-btn teal" target="_blank">Claim your listing now now now</a>
+			</div>
+			</div>
+</div>
+					<div id="detail-promote" data-module="promote" class="detail-module gutter-left gutter-right promote">
+	<div class="max-wrapper">
+
+					<div class="txt-container fmobile">
+				<h3>Promote your business with a platform designed to attract local customers.</h3>
+			</div>
+			<div class="img-container img-left ">
+				<div class="frame">
+											<img src="static/picture/Feature_Animation_2x.gif">
+									</div>
+			</div>
+			<div class="txt-container img-left">
+				<h3 class="fdesktop">Promote your business with a platform designed to attract local customers.</h3>
+				<div class="keywords fdesktop">
+					<a href="ads.html#reach">Target in your area</a>					 <a href="ads.html#be-first">Show up first</a>					 <a href="ads.html#easy-setup">Simple setup</a>				</div>
+				<a href="advertise.html" class="simple-btn teal">Promote my business</a>
+			</div>
+			</div>
+</div>
+	<div id="detail-discover" data-module="discover" class="detail-module gutter-left gutter-right discover">
+		<div class="max-wrapper">
+			<div class="txt-container img-right">
+				<h3>Discover what businesses small and large are doing with Foursquare.</h3>
+				<div class="keywords fdesktop">
+					<a href="discover.html#success-stories">Small businesses</a>					 <a href="discover.html#national-brands">National brands</a>									</div>
+				<a href="discover.html" class="simple-btn teal fdesktop">Learn more</a>
+			</div>
+			<div class="img-container img-right has-quotes">
+				<div class="frame">
+					<div class="quotes carousel">
+						<div class="items-wrapper">
+							<div class="item quote active">
+								<div class="owner-img" style="background-image:url(static/image/barcade_hero1.jpg)">
+									<span class="circle"><img src="static/picture/barcade_paul.png"></span>
+										<div class="bg-overlay"></div>
+								</div>
+								<div class="quote-text">
+									<span class="text">Each customer that Foursquare Ads brought in cost $1.71, and Barcade estimates that they spend $20.</span>
+									<a href="barcade.html" target="_blank"><span class="owner">&mdash; Barcade</span></a>
+								</div>
+							</div>
+							<div class="item quote inactive">
+								<div class="owner-img" style="background-image:url(static/image/Raging_Patio.JPG)">
+									<span class="circle"><img src="static/picture/Scott_ProfilePic_2x.png"></span>
+									<div class="bg-overlay"></div>
+								</div>
+								<div class="quote-text">
+									<span class="text">People are so spontaneous in where they go, but Foursquare helps us stay on people’s minds. </span>
+									<a href="raging-burrito-taco.html" target="_blank"><span class="owner">&mdash; Raging Burrito &amp; Taco</span></a>
+								</div>
+							</div>
+							<div class="item quote inactive">
+								<div class="owner-img" style="background-image:url(static/image/PYT_inside.jpg)">
+									<span class="circle"><img src="static/picture/Tommy_Circle.png"></span>
+									<div class="bg-overlay"></div>
+								</div>
+								<div class="quote-text">
+									<span class="text">It’s much better than other advertising because people don’t listen to the business talking about themselves, they listen to other customers.</span>
+									<a href="pyt-success-story.html" target="_blank"><span class="owner">&mdash; PYT</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="control-dots">
+							<span class="dot active"></span>
+							<span class="dot"></span>
+							<span class="dot"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="txt-container img-right fmobile">
+				<a href="discover.html" class="simple-btn teal">Learn more</a>
+			</div>
+		</div>
+</div>
+<div class="video-module">
+	<div class="video-wrapper">
+	  	<div class="image-preview" style="background-image:url(static/image/overlay.jpg)">
+	  	<div class="play-wrapper">
+	  		<div class="play-button"><span class="play-icon play-btn-lg"></span></div>
+	  	</div>
+	  </div>
+	  <iframe id="fvideo" src="102672749-1_1_1.html" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>  
+	</div>
+</div>					<div class="search-module">
+	<div class="max-wrapper">
+		<h3>Let’s find your business on Foursquare</h3>
+		<form action="">
+			<div class="venue-name">
+				<input type="text" name="venuename" placeholder="Business Name" autocomplete="off">
+				<div class="venues-dropdown"></div>
+			</div>
+			<div class="venue-location">
+				<input type="text" name="venuelocation" placeholder="City, State/Country" autocomplete="off">
+				<span class="locator-sm current hover"></span>
+			</div>
+			<div class="venue-search">
+				<div class="input-submit">
+					<span class="search-white-sm"></span>
+					<span class="search-txt">Search</span>
+					<input type="submit" name="venuesearch" class="simple-btn hide-input" value="Search">
+				</div>
+			</div>
+		</form>
+		<small><p>Ready to claim your listing? <a href="claim2.html">Get started now.</a></p></small>
+	</div>
+</div>			</section>
+		</main>
+	</div>
+
+	<footer class="site-foot gutter-left gutter-right">
+		<div class="max-wrapper">
+			<div class="columns-wrapper">
+				<div class="column gutter-right">
+					<h4><a href="https://support.foursquare.com">We’re here to help</a></h4>
+					<p><p><small></small></p><p>Check out our&nbsp;<a href="http://support.foursquare.com">Support Center</a> for answers to frequently asked questions or to get in touch with our friendly support team. Note: support is only available in English at this time.</p>
+				</div>
+				<div class="column gutter-right">
+					<h4><a href="https://enterprise.foursquare.com/contact-us">Contact our Sales Team</a></h4>
+					<p><p>Or,&nbsp;<a href="national-brands.html">learn more</a> about the work we do with national brands</p>
+				</div>
+			<div class="column links">
+				<div class="links-column">
+					<ul>
+						<li><a href="https://foursquare.com/about">About</a></li>
+						<li><a href="http://blog.foursquare.com/">Blog</a></li>
+						<li><a href="https://developer.foursquare.com/">Developers</a></li>
+						<li><a href="https://foursquare.com/jobs/">Jobs</a></li>
+					</ul>
+				</div>
+				<div class="links-column">
+					<ul>
+						<li><a href="https://support.foursquare.com">Support</a></li>
+						<li><a href="https://foursquare.com/legal/privacy">Privacy</a></li>
+						<li><a href="terms2.html">Terms</a></li>
+						<li><a href="data-requests1.html">Do Not Sell My Personal Info</a></li>
+					</ul>
+				</div>
+				<div class="links-column">
+					<ul>
+						<li><a href="partners1.html">Partners</a></li>
+						<li><a href="http://partners.foursquare.com/">English</a></li>
+					</ul>
+				</div>
+				<select class="lang-selector hidden">
+					<option value="en" selected="">English</option>
+					<option value="it">Italian</option>
+					<option value="de">Deutsch</option>
+					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="ja">本語</option>
+					<option value="th">ภาษาไทย</option>
+					<option value="ko">한국어</option>
+					<option value="ru">Русский</option>
+					<option value="pt">Português</option>
+					<option value="id">Bahasa Indonesia</option>
+					<option value="tr">Türkçe</option>
+				</select>
+				</div>
+			</div>
+			<div class="credits">
+				<p>Foursquare &copy;&nbsp;2017 Lovingly made in NYC & SF</p>
+			</div>
+		</div>
+	</footer>
+	<script src="static/js/app.min.js"></script>
+</body>
+</html>
